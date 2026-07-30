@@ -1,21 +1,8 @@
 import React from "react";
+import { categories } from "../../../constants/dashboard";
 import Button from "./Button";
 
-interface MemberCategory {
-  name: string;
-  count: number;
-  percentage: number;
-  color: string;
-  dotBg: string;
-}
-
-const categories: MemberCategory[] = [
-  { name: "Active", count: 934, percentage: 75, color: "#22c55e", dotBg: "bg-emerald-500" },
-  { name: "Inactive", count: 180, percentage: 14, color: "#eab308", dotBg: "bg-amber-500" },
-  { name: "Expired", count: 132, percentage: 11, color: "#ef4444", dotBg: "bg-rose-500" },
-];
-
-export const MemberDistributionChart: React.FC = () => {
+const MemberDistributionChart: React.FC = () => {
   const total = 1246;
 
   // Donut parameters
@@ -109,3 +96,5 @@ export const MemberDistributionChart: React.FC = () => {
     </article>
   );
 };
+
+export default MemberDistributionChart;

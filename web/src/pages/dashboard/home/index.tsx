@@ -20,7 +20,7 @@ import {
   Badge,
 } from "../../../components/dashboard/ui";
 
-import { expiringMemberships, popularClasses, recentCheckIns, recentPayments } from "../../../constants/main";
+import { expiringMemberships, popularClasses, recentCheckIns, recentPayments } from "../../../constants/dashboard";
 
 const HomePage: React.FC = () => {
   return (
@@ -82,12 +82,12 @@ const HomePage: React.FC = () => {
       {/* Middle Row (Revenue Chart, Distribution, Recent Check-ins) */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-stretchb mb-4">
         {/* Revenue Overview (4 Cols on XL, 6 on LG) */}
-        <div className="lg:col-span-6 xl:col-span-4 min-h-[320px]">
+        <div className="lg:col-span-6 xl:col-span-4 min-h-80">
           <RevenueChart />
         </div>
 
         {/* Member Distribution (4 Cols on XL, 6 on LG) */}
-        <div className="lg:col-span-6 xl:col-span-4 min-h-[320px]">
+        <div className="lg:col-span-6 xl:col-span-4 min-h-80]">
           <MemberDistributionChart />
         </div>
 
@@ -169,7 +169,7 @@ const HomePage: React.FC = () => {
                   />
                   <div className="truncate">
                     <p className="font-bold text-heading truncate">{member.name}</p>
-                    <div className="flex items-center gap-1.5 text-[10px] text-faint">
+                    <div className="flex items-center gap-1.5 text-xs text-faint">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary inline-block"></span>
                       <span>{member.plan}</span>
                     </div>
@@ -178,10 +178,10 @@ const HomePage: React.FC = () => {
 
                 <div className="flex items-center gap-2 shrink-0">
                   <div className="text-right">
-                    <p className="text-[11px] text-quaternary font-medium">
+                    <p className="text-xs text-quaternary font-medium">
                       {member.expiryDate}
                     </p>
-                    <span className="inline-block text-[10px] font-semibold text-amber-400">
+                    <span className="inline-block text-xs font-semibold text-amber-400">
                       {member.daysLeft} days left
                     </span>
                   </div>
@@ -219,16 +219,16 @@ const HomePage: React.FC = () => {
                   </div>
                   <div className="truncate">
                     <p className="font-bold text-heading truncate">{pmt.name}</p>
-                    <p className="text-[10px] font-medium text-faint">{pmt.plan}</p>
+                    <p className="text-xs font-medium text-faint">{pmt.plan}</p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-3 shrink-0">
                   <div className="text-right">
                     <p className="font-bold text-heading tabular-nums">{pmt.amount}</p>
-                    <p className="text-[10px] text-faint">{pmt.date}</p>
+                    <p className="text-xs text-faint">{pmt.date}</p>
                   </div>
-                  <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-semibold text-emerald-400 border border-emerald-500/20">
+                  <span className="rounded-full bg-emerald-500/10 px-2 py-0.5 text-xs font-semibold text-emerald-400 border border-emerald-500/20">
                     {pmt.status}
                   </span>
                 </div>
@@ -265,7 +265,7 @@ const HomePage: React.FC = () => {
                       </div>
                       <div>
                         <p className="font-bold text-heading">{cls.title}</p>
-                        <p className="text-[10px] font-medium text-faint">
+                        <p className="text-xs font-medium text-faint">
                           {cls.schedule}
                         </p>
                       </div>

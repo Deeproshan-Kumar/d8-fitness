@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate } from "react-router";
 import { useAppSelector } from "../../../store/hook";
-import { navLinks } from "../../../constants/main";
+import { navLinks } from "../../../constants/dashboard";
 import { Dumbbell, LogOut } from "lucide-react";
 
 export const Sidebar: React.FC = () => {
@@ -16,14 +16,15 @@ export const Sidebar: React.FC = () => {
   );
 
   return (
-    <aside className="flex h-screen w-64 flex-col border-r border-border bg-secondary shrink-0 transition-all
+    <aside className={`flex h-screen flex-col border-r border-border bg-secondary shrink-0 transition-all
     duration-300
-    ease-in-out">
-      <div className="h-15 w-full flex items-center gap-2.5 border-b border-border px-4">
+    ease-in-out ${isOpen ? "w-64" : "w-16"}`}>
+      <div className={`h-15 w-full flex items-center gap-2.5 border-b border-border ${isOpen ? "px-4" : "justify-center"}`}>
         <div className="flex h-8 w-8 min-w-8 items-center justify-center rounded-sm bg-primary-soft text-primary border border-primary/30">
           <Dumbbell size={20} className="rotate-45" />
         </div>
-        <div className="flex flex-col items-start">
+        {/* Collapsed: hidden from sight but still announced, so the rail keeps its heading. */}
+        <div className={`flex flex-col items-start ${isOpen ? "" : "sr-only"}`}>
           <h2 className="text-sm font-bold">
             TZ
           </h2>
@@ -34,28 +35,36 @@ export const Sidebar: React.FC = () => {
       </div>
 
       {/* Navigation List */}
-      <nav className="flex-1 overflow-y-auto px-2 py-4 space-y-2 scrollbar-thin">
+      <nav className="flex-1 overflow-y-auto overflow-x-hidden px-2 py-4 space-y-2 scrollbar-thin">
         {navLinks.map(({ name, path, icon: Icon, badge }) => (
           <NavLink
             key={path}
             to={path}
             end={path === "/dashboard"}
+            title={isOpen ? undefined : name}
             className={({ isActive }) =>
-              `group relative flex items-center justify-between text-xs font-medium text-nowrap rounded-sm px-2 py-2.5 transition-all duration-200 ${isActive
+              `group relative flex items-center text-xs font-medium text-nowrap rounded-sm py-2.5 transition-all duration-200 ${isOpen ? "justify-between px-2" : "justify-center"} ${isActive
                 ? "bg-primary text-on-primary font-semibold"
                 : "text-quaternary hover:bg-surface-2 hover:text-heading"
               }`
             }
           >
-            <div className="flex items-center gap-3">
-              <Icon size={16} />
-              <span>{name}</span>
+            <div className={`flex items-center ${isOpen ? "gap-3" : ""}`}>
+              <Icon size={16} className="min-w-4" />
+              {/* sr-only keeps the link's accessible name once the label is out of sight. */}
+              <span className={isOpen ? "" : "sr-only"}>{name}</span>
             </div>
-            {badge && (
+            {badge && (isOpen ? (
               <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/80 px-1.5 text-xs font-bold text-on-primary">
                 {badge}
               </span>
-            )}
+            ) : (
+              /* No room for the count in a 64px rail, so it degrades to a dot. */
+              <span
+                aria-hidden="true"
+                className="absolute right-1.5 top-1.5 h-1.5 w-1.5 rounded-full bg-primary"
+              />
+            ))}
           </NavLink>
         ))}
       </nav>
@@ -63,10 +72,11 @@ export const Sidebar: React.FC = () => {
       {/* Sidebar Footer: Clean Logout Button */}
       <button
         onClick={handleLogout}
-        className="h-15 w-full flex items-center gap-2.5 p-2 text-xs font-medium text-quaternary border-t border-border/50 hover:bg-rose-500/10 hover:text-rose-400 transition-colors cursor-pointer"
+        title={isOpen ? undefined : "Log Out"}
+        className={`h-15 w-full flex items-center gap-2.5 p-2 text-xs font-medium text-quaternary border-t border-border/50 hover:bg-rose-500/10 hover:text-rose-400 transition-colors cursor-pointer ${isOpen ? "" : "justify-center"}`}
       >
-        <LogOut size={16} />
-        <span>Log Out</span>
+        <LogOut size={16} className="min-w-4" />
+        <span className={isOpen ? "" : "sr-only"}>Log Out</span>
       </button>
     </aside>
   );

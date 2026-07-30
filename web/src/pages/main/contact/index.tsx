@@ -1,13 +1,26 @@
 const ContactPage: React.FC = () => {
   return (
     <>
-      <section>C</section>
-      <section>O</section>
-      <section>N</section>
-      <section>T</section>
-      <section>A</section>
-      <section>C</section>
-      <section>T</section>
+      <section className="section">
+        <div className="container">
+          <h1>Hero</h1>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Overview</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Highlights</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Summary</h2>
+        </div>
+      </section>
     </>
   );
 };

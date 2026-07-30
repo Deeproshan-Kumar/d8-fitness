@@ -173,25 +173,20 @@
   font-family: "Inter", sans-serif;
 }
 
+@utility nav-link {
+  @apply text-sm text-body font-normal transition-colors;
+}
+
+@utility gradient-text {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
+}
+
 @utility font-heading {
   font-family: "Space Grotesk", sans-serif;
 }
 
 @utility input-border {
   @apply border border-border-strong;
-}
-
-@utility btn-primary {
-  @apply rounded-lg bg-primary px-4 py-2 font-medium text-on-primary;
-  transition: background-color 200ms ease;
-
-  &:hover {
-    background-color: var(--color-primary-hover);
-  }
-
-  &:active {
-    background-color: var(--color-primary-active);
-  }
 }
 
 /* Focus treatment shared by every interactive control. Drawn with box-shadow

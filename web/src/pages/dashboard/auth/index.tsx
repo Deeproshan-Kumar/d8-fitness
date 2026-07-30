@@ -26,10 +26,10 @@ const AuthPage: React.FC = () => {
   }, []);
 
   return (
-    <section className="flex items-center">
-      <div className="w-1/3 p-25">
+    <section className="flex">
+      <div className="w-1/2 p-10 pt-25 lg:p-25">
         <div className="relative flex justify-center items-center flex-nowrap bg-surface-2 gap-0 rounded-full max-w-90 mx-auto border border-border-strong overflow-hidden mb-8">
-          <div className={`absolute top-0 left-0 bg-primary h-9 w-45 z-0 transition-transform duration-500 ${isLogin ? 'translate-x-0' : 'translate-x-45'}`}></div>
+          <div className={`absolute top-0 left-0 bg-primary h-9 w-1/2 z-0 transition-transform duration-500 ${isLogin ? 'translate-x-0' : 'translate-x-full'}`}></div>
           <Button variant="ghost" size="sm" className={`h-9 w-full rounded-l-full rounded-r-none z-1 transition-colors duration-300`} onClick={() => handleTab("login")}>
             <span className={`z-2 ${isLogin ? 'text-on-primary' : 'text-quaternary'}`}>Login</span>
           </Button>
@@ -37,7 +37,7 @@ const AuthPage: React.FC = () => {
             <span className={`z-2 ${!isLogin ? 'text-on-primary' : 'text-quaternary'}`}>Register</span>
           </Button>
         </div>
-        {isLogin ? <form className="space-y-5 min-h-[552px]">
+        {isLogin ? <form className="space-y-5">
           <div>
             <Label labelFor="email" label="Email Address" />
             <Input type="email" placeholder="Email" id="email" />
@@ -50,7 +50,7 @@ const AuthPage: React.FC = () => {
             <Button variant="ghost" size="xs" className="px-0! py-0! hover:bg-transparent hover:underline hover:underline-offset-4">Forgot password?</Button>
           </p>
           <p className="text-xs text-faint font-normal">Don't have an account? <Button variant="ghost" size="xs" onClick={() => handleTab("register")} className="px-0! hover:bg-transparent hover:underline hover:underline-offset-4">Register</Button></p>
-          <Button type="submit" size="xs" className="h-9 w-full rounded-sm">Login</Button>
+          <Button type="submit" size="sm" className="h-9 w-full rounded-sm">Login</Button>
         </form> : <form className="space-y-5">
           <div className="flex gap-4">
             <div className="w-1/2">
@@ -78,10 +78,10 @@ const AuthPage: React.FC = () => {
             <Label labelFor="confirm-password" label="Confirm Password" />
             <Input type="password" placeholder="Confirm Password" id="confirm-password" />
           </div>
-          <Button type="submit" size="xs" className="h-9 w-full rounded-sm">Register</Button>
+          <Button type="submit" size="sm" className="h-9 w-full rounded-sm">Register</Button>
         </form>}
       </div>
-      <div className="w-2/3 relative after:pointer-events-none after:absolute after:inset-0 after:bg-linear-to-r after:from-canvas after:via-canvas/25 after:to-canvas/60">
+      <div className="w-1/2 relative after:pointer-events-none after:absolute after:inset-0 after:bg-linear-to-r after:from-canvas after:via-canvas/25 after:to-canvas/60">
         <video src="/video/BG.mp4" autoPlay loop muted className="h-screen w-full object-cover opacity-50" />
       </div>
     </section>

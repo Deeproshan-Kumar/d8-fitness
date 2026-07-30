@@ -1,14 +1,26 @@
 const TrainersPage: React.FC = () => {
   return (
     <>
-      <section>T</section>
-      <section>R</section>
-      <section>A</section>
-      <section>I</section>
-      <section>N</section>
-      <section>E</section>
-      <section>R</section>
-      <section>S</section>
+      <section className="section">
+        <div className="container">
+          <h1>Hero</h1>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Overview</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Highlights</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Summary</h2>
+        </div>
+      </section>
     </>
   );
 };

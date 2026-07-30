@@ -1,25 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { weeklyData } from "../../../constants/dashboard";
 import Button from "./Button";
 
-interface DataPoint {
-  date: string;
-  fullDate: string;
-  value: number;
-  displayValue: string;
-}
-
-const weeklyData: DataPoint[] = [
-  { date: "14 May", fullDate: "14 May 2024", value: 5200, displayValue: "$5,200" },
-  { date: "15 May", fullDate: "15 May 2024", value: 12400, displayValue: "$12,400" },
-  { date: "16 May", fullDate: "16 May 2024", value: 12800, displayValue: "$12,800" },
-  { date: "17 May", fullDate: "17 May 2024", value: 18750, displayValue: "$18,750" },
-  { date: "18 May", fullDate: "18 May 2024", value: 16200, displayValue: "$16,200" },
-  { date: "19 May", fullDate: "19 May 2024", value: 18400, displayValue: "$18,400" },
-  { date: "20 May", fullDate: "20 May 2024", value: 21500, displayValue: "$21,500" },
-];
-
-export const RevenueChart: React.FC = () => {
+const RevenueChart: React.FC = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(3); // Default 17 May highlighted as in mockup
   const [timeframe, setTimeframe] = useState<string>("Weekly");
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -228,3 +212,5 @@ export const RevenueChart: React.FC = () => {
     </article>
   );
 };
+
+export default RevenueChart;

@@ -1,18 +1,7 @@
 import React from "react";
 import { TrendingUp, TrendingDown } from "lucide-react";
 
-export interface StatCardProps {
-  label: string;
-  value: string;
-  change: string;
-  isPositive: boolean;
-  period: string;
-  icon: React.ElementType;
-  iconBg: string;
-  iconColor: string;
-}
-
-export const DashboardStatCard: React.FC<StatCardProps> = ({
+const DashboardStatCard: React.FC<StatCardProps> = ({
   label,
   value,
   change,
@@ -50,3 +39,5 @@ export const DashboardStatCard: React.FC<StatCardProps> = ({
     </article>
   );
 };
+
+export default DashboardStatCard;

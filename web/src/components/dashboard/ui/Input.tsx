@@ -1,33 +1,11 @@
 import Button from "./Button";
 import { Image } from 'lucide-react';
 
-// Input Props
-interface InputProps {
-    type: string;
-    placeholder: string;
-    id: string;
-    value?: number | string;
-    classes?: string;
-    required?: boolean;
-    readonly?: boolean;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
 export const Input: React.FC<InputProps> = ({ type, placeholder, id, value, classes, required, readonly, onChange }) => {
     const inputClasses = `input-border h-9 w-full bg-surface-3/60 text-xs text-body font-normal rounded-sm outline-none p-2 transition-colors duration-200 placeholder:text-xs placeholder:font-normal placeholder:text-faint hover:border-border-strong/80 focus:border-primary focus:bg-surface-3 focus:ring-2 focus:ring-primary/25 read-only:opacity-70 ${classes}`;
     return (
         <input type={type} placeholder={placeholder} id={id} value={value} className={inputClasses} required={required} readOnly={readonly} onChange={onChange} />
     )
-}
-
-// File Input Props
-interface FileInputProps {
-    id: string;
-    required?: boolean;
-    multiple?: boolean;
-    accept?: string;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-    filename?: string | null;
 }
 
 export const FileInput: React.FC<FileInputProps> = ({

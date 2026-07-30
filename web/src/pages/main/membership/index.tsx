@@ -1,16 +1,26 @@
 const MembershipPage: React.FC = () => {
   return (
     <>
-      <section>M</section>
-      <section>E</section>
-      <section>M</section>
-      <section>B</section>
-      <section>E</section>
-      <section>R</section>
-      <section>S</section>
-      <section>H</section>
-      <section>I</section>
-      <section>P</section>
+      <section className="section">
+        <div className="container">
+          <h1>Hero</h1>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Overview</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Highlights</h2>
+        </div>
+      </section>
+      <section className="section">
+        <div className="container">
+          <h2>Summary</h2>
+        </div>
+      </section>
     </>
   );
 };

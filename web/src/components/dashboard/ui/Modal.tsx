@@ -33,15 +33,6 @@ const ModalFooter: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     return <div className="border-t border-border p-4">{children}</div>;
 };
 
-// --- Modal component ---
-interface ModalProps {
-    show: boolean;
-    title?: string;
-    children: React.ReactNode;
-    footer?: React.ReactNode;
-    onClose: () => void;
-}
-
 const Modal: React.FC<ModalProps> = ({ show, onClose, title, children, footer }) => {
     const handleEscape = useCallback(
         (e: KeyboardEvent) => {

@@ -8,6 +8,8 @@ import {
   MembershipPage,
   TrainersPage,
   ContactPage,
+  TestimonialsPage,
+  FAQsPage,
 } from "../pages/main";
 
 // Dashboard
@@ -29,16 +31,24 @@ const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "/services",
+        path: "/about/services",
         element: <ServicesPage />,
       },
       {
-        path: "/membership",
+        path: "/about/membership",
         element: <MembershipPage />,
       },
       {
-        path: "/trainers",
+        path: "/about/trainers",
         element: <TrainersPage />,
+      },
+      {
+        path: "/testimonials",
+        element: <TestimonialsPage />,
+      },
+      {
+        path: "/faqs",
+        element: <FAQsPage />,
       },
       {
         path: "/contact",
