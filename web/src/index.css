@@ -174,7 +174,7 @@
 }
 
 @utility nav-link {
-  @apply text-sm text-body font-normal transition-colors;
+  @apply text-sm text-body transition-colors;
 }
 
 @utility gradient-text {

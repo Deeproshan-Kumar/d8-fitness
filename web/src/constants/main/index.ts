@@ -9,23 +9,21 @@ export const navLinks: NavLinkProps[] = [
         id: "about",
         title: "About",
         href: "/about",
-        children: [
-            {
-                id: "services",
-                title: "Services",
-                href: "/about/services",
-            },
-            {
-                id: "membership",
-                title: "Membership",
-                href: "/about/membership",
-            },
-            {
-                id: "trainers",
-                title: "Trainers",
-                href: "/about/trainers",
-            },
-        ]
+    },
+    {
+        id: "services",
+        title: "Services",
+        href: "/services",
+    },
+    {
+        id: "membership",
+        title: "Membership",
+        href: "/membership",
+    },
+    {
+        id: "trainers",
+        title: "Trainers",
+        href: "/trainers",
     },
     {
         id: "testimonials",

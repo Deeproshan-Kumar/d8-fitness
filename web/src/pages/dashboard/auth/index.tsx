@@ -82,7 +82,7 @@ const AuthPage: React.FC = () => {
         </form>}
       </div>
       <div className="w-1/2 relative after:pointer-events-none after:absolute after:inset-0 after:bg-linear-to-r after:from-canvas after:via-canvas/25 after:to-canvas/60">
-        <video src="/video/BG.mp4" autoPlay loop muted className="h-screen w-full object-cover opacity-50" />
+
       </div>
     </section>
   );
