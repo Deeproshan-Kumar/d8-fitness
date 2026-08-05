@@ -50,7 +50,7 @@
 
   /* --- Type -------------------------------------------------------------- */
   --font-body: "Inter", sans-serif;
-  --font-heading: "Space Grotesk", sans-serif;
+  --font-heading: "Sora", sans-serif;
 }
 
 /* ============================================================================
@@ -103,7 +103,7 @@
   }
 
   p {
-    @apply text-base font-normal text-body;
+    @apply text-sm font-normal text-body leading-relaxed;
   }
 
   /* Dark scrollbar */
@@ -173,24 +173,26 @@
   font-family: "Inter", sans-serif;
 }
 
+@utility font-heading {
+  font-family: "Sora", sans-serif;
+}
+
 @utility nav-link {
-  @apply text-sm text-body transition-colors;
+  @apply text-sm font-light font-heading text-body transition-colors;
+}
+
+@utility link {
+  @apply text-sm font-light font-body text-body transition-colors inline-flex items-center gap-1.5 hover:text-on-primary;
 }
 
 @utility gradient-text {
   @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent;
 }
 
-@utility font-heading {
-  font-family: "Space Grotesk", sans-serif;
-}
-
 @utility input-border {
   @apply border border-border-strong;
 }
 
-/* Focus treatment shared by every interactive control. Drawn with box-shadow
-   so it never affects layout. */
 @utility focus-ring {
   outline: none;
 
@@ -201,9 +203,84 @@
   }
 }
 
-/* Soft brand halo for primary calls to action. */
-@utility glow-primary {
-  box-shadow:
-    0 1px 0 0 rgb(255 255 255 / 0.18) inset,
-    0 8px 20px -10px rgb(147 51 234 / 0.55);
+@utility glass-card {
+  @apply rounded-xl border border-on-primary/10 bg-on-primary/5 backdrop-blur-md;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes scroll-bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-6px);
+  }
+
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@utility animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+@utility animate-scroll-bounce {
+  animation: scroll-bounce 2s infinite;
+}
+
+@utility submenu-wrapper {
+  @apply absolute top-full left-0 min-w-60 glass-card flex items-center gap-2 rounded-sm scale-y-0 opacity-0 origin-top p-1.5 transition-all duration-500 group-hover:scale-y-100 group-hover:opacity-100;
+}
+
+.hero {
+  @apply relative flex items-center min-h-screen w-full py-20 lg:py-0 overflow-hidden bg-[url('/images/hero.jpg')]
+  bg-cover bg-center bg-no-repeat bg-fixed;
+}
+
+.faqs {
+  @apply overflow-hidden bg-[url('/images/splash-bg.webp')]
+  bg-cover bg-center bg-no-repeat;
+}
+
+.faq-header {
+  @apply w-full center-y font-heading cursor-pointer rounded-sm px-2 py-3;
+}
+
+.faq-header .icon {
+  @apply h-5 w-5 bg-primary center text-on-primary rounded-full ml-auto shadow-sm transition-all ease-in-out duration-300;
+}
+
+.faq-header .icon:hover {
+  @apply text-primary;
+}
+
+.faq-body {
+  @apply border border-on-primary/10 backdrop-blur-md;
+}
+
+.faq-body p {
+  @apply px-2 py-3;
+}
+
+.footer {
+  @apply bg-secondary/40 py-10;
 }

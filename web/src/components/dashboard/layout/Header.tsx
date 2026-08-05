@@ -63,7 +63,7 @@ export const Header: React.FC = () => {
             className="relative"
           >
             <Bell size={16} />
-            <span className="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white shadow-sm">
+            <span className="absolute -top-1 -right-1 center h-4 w-4 rounded-full bg-rose-500 text-[10px] font-bold text-on-primary shadow-sm">
               6
             </span>
           </Button>

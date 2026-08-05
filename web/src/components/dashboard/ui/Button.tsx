@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
 }) => {
   const baseClasses =
-    "inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm font-medium transition-colors duration-200 focus-ring disabled:pointer-events-none disabled:opacity-45";
+    "inline-flex cursor-pointer items-center justify-center gap-2 rounded-sm text-nowrap font-medium transition-colors duration-200 focus-ring disabled:pointer-events-none disabled:opacity-45";
 
   const variantClasses = {
     primary:

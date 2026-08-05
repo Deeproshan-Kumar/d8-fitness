@@ -20,7 +20,7 @@ export const FileInput: React.FC<FileInputProps> = ({
         <>
             <label
                 htmlFor={id}
-                className="group h-auto flex flex-col items-center justify-center w-full border input-border border-dashed rounded-sm bg-surface-3/40 text-center p-4 cursor-pointer transition-colors duration-200 hover:border-primary/60 hover:bg-primary-softer"
+                className="group h-auto center flex-col w-full border input-border border-dashed rounded-sm bg-surface-3/40 text-center p-4 cursor-pointer transition-colors duration-200 hover:border-primary/60 hover:bg-primary-softer"
             >
                 <Image className="text-quaternary transition-colors duration-200 mb-2 group-hover:text-primary" size={28} />
                 <p className="text-sm font-semibold text-heading mb-1">Choose a Profile Picture, or drag &amp; drop here.</p>

@@ -93,7 +93,7 @@ const HomePage: React.FC = () => {
 
         {/* Recent Check-ins (4 Cols on XL, 12 on LG) */}
         <div className="lg:col-span-12 xl:col-span-4 rounded-sm border border-border bg-secondary flex flex-col justify-between p-4">
-          <div className="flex items-center justify-between border-b border-border/40 pb-4">
+          <div className="center-y justify-between border-b border-border/40 pb-4">
             <h4 className="text-base text-heading">
               Recent Check-ins
             </h4>
@@ -108,9 +108,9 @@ const HomePage: React.FC = () => {
             {recentCheckIns.map((item) => (
               <div
                 key={item.id}
-                className="flex items-center justify-between rounded-lg p-2 hover:bg-surface-2/60 transition-colors"
+                className="center-y justify-between rounded-lg p-2 hover:bg-surface-2/60 transition-colors"
               >
-                <div className="flex items-center gap-2.5">
+                <div className="center-y gap-2.5">
                   <img
                     src={item.avatar}
                     alt={item.name}
@@ -147,7 +147,7 @@ const HomePage: React.FC = () => {
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-4 items-stretch">
         {/* Membership Expiring Soon */}
         <article className="rounded-sm border border-border bg-secondary flex flex-col justify-between p-4">
-          <div className="flex items-center justify-between border-b border-border/40 pb-4">
+          <div className="center-y justify-between border-b border-border/40 pb-4">
             <h4 className="text-base text-heading">
               Membership Expiring Soon
             </h4>
@@ -159,9 +159,9 @@ const HomePage: React.FC = () => {
             {expiringMemberships.map((member) => (
               <div
                 key={member.id}
-                className="flex items-center justify-between p-2 rounded-lg hover:bg-surface-2/60 transition-colors text-xs"
+                className="center-y justify-between p-2 rounded-lg hover:bg-surface-2/60 transition-colors text-xs"
               >
-                <div className="flex items-center gap-2.5 min-w-0">
+                <div className="center-y gap-2.5 min-w-0">
                   <img
                     src={member.avatar}
                     alt={member.name}
@@ -169,7 +169,7 @@ const HomePage: React.FC = () => {
                   />
                   <div className="truncate">
                     <p className="font-bold text-heading truncate">{member.name}</p>
-                    <div className="flex items-center gap-1.5 text-xs text-faint">
+                    <div className="center-y gap-1.5 text-xs text-faint">
                       <span className="h-1.5 w-1.5 rounded-full bg-primary inline-block"></span>
                       <span>{member.plan}</span>
                     </div>
@@ -199,7 +199,7 @@ const HomePage: React.FC = () => {
 
         {/* Recent Payments */}
         <article className="rounded-sm border border-border bg-secondary flex flex-col justify-between p-4">
-          <div className="flex items-center justify-between border-b border-border/40 pb-4">
+          <div className="center-y justify-between border-b border-border/40 pb-4">
             <h4 className="text-base text-heading">
               Recent Payments
             </h4>
@@ -211,10 +211,10 @@ const HomePage: React.FC = () => {
             {recentPayments.map((pmt) => (
               <div
                 key={pmt.id}
-                className="flex items-center justify-between p-2 rounded-lg hover:bg-surface-2/60 transition-colors text-xs"
+                className="center-y justify-between p-2 rounded-lg hover:bg-surface-2/60 transition-colors text-xs"
               >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 shrink-0">
+                <div className="center-y gap-2.5 min-w-0">
+                  <div className="h-7 w-7 center rounded-full bg-emerald-500/20 text-emerald-400 shrink-0">
                     <CheckCircle2 size={16} />
                   </div>
                   <div className="truncate">
@@ -223,7 +223,7 @@ const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 shrink-0">
+                <div className="center-y gap-3 shrink-0">
                   <div className="text-right">
                     <p className="font-bold text-heading tabular-nums">{pmt.amount}</p>
                     <p className="text-xs text-faint">{pmt.date}</p>
@@ -239,7 +239,7 @@ const HomePage: React.FC = () => {
 
         {/* Popular Classes */}
         <article className="rounded-sm border border-border bg-secondary flex flex-col justify-between p-4">
-          <div className="flex items-center justify-between border-b border-border/40 pb-4">
+          <div className="center-y justify-between border-b border-border/40 pb-4">
             <h4 className="text-base text-heading">
               Popular Classes
             </h4>
@@ -256,10 +256,10 @@ const HomePage: React.FC = () => {
                   key={cls.id}
                   className="p-2 rounded-lg hover:bg-surface-2/60 transition-colors text-xs space-y-1.5"
                 >
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
+                  <div className="center-y justify-between">
+                    <div className="center-y gap-2.5">
                       <div
-                        className={`flex h-8 w-8 items-center justify-center rounded-lg ${cls.iconBg}`}
+                        className={`h-8 w-8 center rounded-lg ${cls.iconBg}`}
                       >
                         <IconComponent size={16} />
                       </div>

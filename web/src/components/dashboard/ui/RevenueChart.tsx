@@ -42,7 +42,7 @@ const RevenueChart: React.FC = () => {
   return (
     <article className="h-full bg-secondary flex flex-col justify-between rounded-sm border border-border p-4">
       {/* Header */}
-      <div className="flex items-center justify-between border-b border-border/40 pb-4">
+      <div className="center-y justify-between border-b border-border/40 pb-4">
         <h4 className="font-heading text-base">Revenue Overview</h4>
         <div className="relative">
           <Button

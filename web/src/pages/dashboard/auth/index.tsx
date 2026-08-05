@@ -28,7 +28,7 @@ const AuthPage: React.FC = () => {
   return (
     <section className="flex">
       <div className="w-1/2 p-10 pt-25 lg:p-25">
-        <div className="relative flex justify-center items-center flex-nowrap bg-surface-2 gap-0 rounded-full max-w-90 mx-auto border border-border-strong overflow-hidden mb-8">
+        <div className="relative center flex-nowrap bg-surface-2 gap-0 rounded-full max-w-90 mx-auto border border-border-strong overflow-hidden mb-8">
           <div className={`absolute top-0 left-0 bg-primary h-9 w-1/2 z-0 transition-transform duration-500 ${isLogin ? 'translate-x-0' : 'translate-x-full'}`}></div>
           <Button variant="ghost" size="sm" className={`h-9 w-full rounded-l-full rounded-r-none z-1 transition-colors duration-300`} onClick={() => handleTab("login")}>
             <span className={`z-2 ${isLogin ? 'text-on-primary' : 'text-quaternary'}`}>Login</span>

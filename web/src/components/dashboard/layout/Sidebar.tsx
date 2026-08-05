@@ -20,7 +20,7 @@ export const Sidebar: React.FC = () => {
     duration-300
     ease-in-out ${isOpen ? "w-64" : "w-16"}`}>
       <div className={`h-15 w-full flex items-center gap-2.5 border-b border-border ${isOpen ? "px-4" : "justify-center"}`}>
-        <div className="flex h-8 w-8 min-w-8 items-center justify-center rounded-sm bg-primary-soft text-primary border border-primary/30">
+        <div className="h-8 w-8 min-w-8 center rounded-sm bg-primary-soft text-primary border border-primary/30">
           <Dumbbell size={20} className="rotate-45" />
         </div>
         {/* Collapsed: hidden from sight but still announced, so the rail keeps its heading. */}
@@ -43,19 +43,19 @@ export const Sidebar: React.FC = () => {
             end={path === "/dashboard"}
             title={isOpen ? undefined : name}
             className={({ isActive }) =>
-              `group relative flex items-center text-xs font-medium text-nowrap rounded-sm py-2.5 transition-all duration-200 ${isOpen ? "justify-between px-2" : "justify-center"} ${isActive
+              `group relative center-y text-xs font-medium text-nowrap rounded-sm py-2.5 transition-all duration-200 ${isOpen ? "justify-between px-2" : "justify-center"} ${isActive
                 ? "bg-primary text-on-primary font-semibold"
                 : "text-quaternary hover:bg-surface-2 hover:text-heading"
               }`
             }
           >
-            <div className={`flex items-center ${isOpen ? "gap-3" : ""}`}>
+            <div className={`center-y ${isOpen ? "gap-3" : ""}`}>
               <Icon size={16} className="min-w-4" />
               {/* sr-only keeps the link's accessible name once the label is out of sight. */}
               <span className={isOpen ? "" : "sr-only"}>{name}</span>
             </div>
             {badge && (isOpen ? (
-              <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-primary/80 px-1.5 text-xs font-bold text-on-primary">
+              <span className="h-5 min-w-5 center rounded-full bg-primary/80 px-1.5 text-xs font-bold text-on-primary">
                 {badge}
               </span>
             ) : (
@@ -73,7 +73,7 @@ export const Sidebar: React.FC = () => {
       <button
         onClick={handleLogout}
         title={isOpen ? undefined : "Log Out"}
-        className={`h-15 w-full flex items-center gap-2.5 p-2 text-xs font-medium text-quaternary border-t border-border/50 hover:bg-rose-500/10 hover:text-rose-400 transition-colors cursor-pointer ${isOpen ? "" : "justify-center"}`}
+        className={`h-15 w-full center-y gap-2.5 p-2 text-xs font-medium text-quaternary border-t border-border/50 hover:bg-rose-500/10 hover:text-rose-400 transition-colors cursor-pointer ${isOpen ? "" : "justify-center"}`}
       >
         <LogOut size={16} className="min-w-4" />
         <span className={isOpen ? "" : "sr-only"}>Log Out</span>

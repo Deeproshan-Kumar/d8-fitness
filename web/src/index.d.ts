@@ -159,3 +159,9 @@ declare interface DataPoint {
     value: number;
     displayValue: string;
 }
+
+// FAQs
+declare interface FAQProps {
+    question: string;
+    answer: string;
+}

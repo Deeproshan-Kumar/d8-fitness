@@ -13,8 +13,8 @@ const DashboardStatCard: React.FC<StatCardProps> = ({
 }) => {
   return (
     <article className="relative rounded-sm border border-border bg-secondary p-4 space-y-2.5 overflow-hidden transition-all duration-200 hover:border-border-strong">
-      <div className="flex items-center justify-between">
-        <div className={`flex h-11 w-11 items-center justify-center rounded-sm ${iconBg} ${iconColor}`}>
+      <div className="center-y justify-between">
+        <div className={`h-11 w-11 center rounded-sm ${iconBg} ${iconColor}`}>
           <Icon size={22} />
         </div>
       </div>
@@ -26,7 +26,7 @@ const DashboardStatCard: React.FC<StatCardProps> = ({
         </h3>
       </div>
 
-      <div className="flex items-center gap-1.5 text-xs">
+      <div className="center-y gap-1.5 text-xs">
         <span
           className={`inline-flex items-center gap-0.5 font-semibold ${isPositive ? "text-emerald-400" : "text-rose-400"
             }`}
