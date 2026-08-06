@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { Users, Award, Dumbbell, Activity, ChevronDown, ChevronRight, Gem, MoveRight } from "lucide-react";
+import { Users, Award, Dumbbell, Activity, ChevronDown, Gem, MoveRight } from "lucide-react";
 import { Button } from "../../ui";
 import StatCard from "./StatCard";
 

@@ -8,17 +8,21 @@ const ServicesPage: React.FC = () => {
       </section>
       <section className="section">
         <div className="container">
-          <h2>Overview</h2>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <h2>Highlights</h2>
-        </div>
-      </section>
-      <section className="section">
-        <div className="container">
-          <h2>Summary</h2>
+          <p>Achieve Your Fitness Goals With A</p>
+          <h2>Personal Trainer</h2>
+          <p>Train smarter with certified gym personal trainers.</p>
+          <div className="service service-1">
+            <h3>Custom Workouts</h3>
+          </div>
+          <div className="service service-1">
+            <h3>Nutrition Tips</h3>
+          </div>
+          <div className="service service-1">
+            <h3>Flexible Schedules</h3>
+          </div>
+          <div className="service service-1">
+            <h3>Ongoing Support</h3>
+          </div>
         </div>
       </section>
     </>

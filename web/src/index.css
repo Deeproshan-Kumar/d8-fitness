@@ -252,17 +252,15 @@
 }
 
 .hero {
-  @apply relative flex items-center min-h-screen w-full py-20 lg:py-0 overflow-hidden bg-[url('/images/hero.jpg')]
-  bg-cover bg-center bg-no-repeat bg-fixed;
+  @apply relative flex items-center min-h-screen w-full py-20 lg:py-0 overflow-hidden bg-[url('/images/hero.jpg')] bg-cover bg-center bg-no-repeat bg-fixed;
 }
 
 .faqs {
-  @apply overflow-hidden bg-[url('/images/splash-bg.webp')]
-  bg-cover bg-center bg-no-repeat;
+  @apply overflow-hidden bg-[url('/images/splash-bg.webp')] bg-cover bg-center bg-no-repeat;
 }
 
 .faq-header {
-  @apply w-full center-y font-heading cursor-pointer rounded-sm px-2 py-3;
+  @apply w-full center-y text-sm font-heading font-medium cursor-pointer px-2 py-3;
 }
 
 .faq-header .icon {

@@ -160,6 +160,32 @@ declare interface DataPoint {
     displayValue: string;
 }
 
+// Membership Card
+declare interface MembershipCardProps {
+    name: string;
+    price: string;
+    period?: string;
+    description?: string;
+    features: string[];
+    popular?: boolean;
+    buttonText?: string;
+    onSelect?: () => void;
+}
+
+// Trainer Card
+declare interface TrainerCardProps {
+    name: string;
+    role: string;
+    image: string;
+    specialties: string[];
+    bio?: string;
+    socials?: {
+        instagram?: string;
+        twitter?: string;
+        linkedin?: string;
+    };
+}
+
 // FAQs
 declare interface FAQProps {
     question: string;
