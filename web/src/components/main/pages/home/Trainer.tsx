@@ -16,6 +16,18 @@ interface TrainerData {
 const Trainers: React.FC = () => {
     const trainers: TrainerData[] = [
         {
+            name: "Amit",
+            role: "Weight loss & Weight Gain Coach",
+            image: "https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&q=80&w=600",
+            specialties: ["Weight loss", "Weight Gain", "Muscle Gain"],
+            bio: "Amit is a certified personal trainer with 5+ years of experience helping clients achieve their weight loss and weight gain goals.",
+            socials: {
+                instagram: "https://instagram.com",
+                twitter: "https://twitter.com",
+                linkedin: "https://linkedin.com",
+            },
+        },
+        {
             name: "Marcus Vance",
             role: "Head Strength Coach",
             image: "https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&q=80&w=600",
@@ -63,7 +75,7 @@ const Trainers: React.FC = () => {
                         Train with certified industry professionals dedicated to helping you unlock your ultimate physical potential.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
                     {trainers.map((trainer, index) => (
                         <div key={index}>
                             <TrainerCard

@@ -64,7 +64,7 @@ const Memberships: React.FC = () => {
                         Choose the plan that fits your lifestyle. No hidden fees. Cancel or pause anytime.
                     </p>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
                     {plans.map((plan, index) => (
                         <div key={index}>
                             <MembershipCard
